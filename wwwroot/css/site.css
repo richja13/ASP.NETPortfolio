@@ -1,0 +1,201 @@
+html {
+  font-size: 52px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background: linear-gradient(-45deg, #00bf8f, #00bf8f, #001510, #001510);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 20%;
+    }
+
+    50% {
+        background-position: 50% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 10px;
+    border: solid 2px #00bf8f;
+    background: rgba(0, 106, 80, 0.6);
+    height: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 40px;
+    padding-bottom: 30px;
+    box-shadow: 0px 12px 0px black;
+}
+
+.logo {
+    margin: 10px;
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+    .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain the aspect ratio of the images */
+        transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    }
+
+    .logo:hover img {
+        transform: scale(1.1); /* Scale the image on hover */
+    }
+
+.Project-Img {
+    border-radius: 40px;
+}
+
+#bloom-text {
+    font-size: 48px; /* Adjust font size as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+    color: #00bf8f; 
+    text-shadow: 0 0 10px rgba(0, 191, 143, 0.7), 0 0 20px rgba(0, 191, 143, 0.5), 0 0 30px rgba(0, 191, 143, 0.3), 0 0 40px rgba(0, 191, 143, 0.2), 0 0 50px rgba(0, 191, 143, 0.1);
+}
+
+/* Optional: Add animation for a pulsating effect */
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 191, 143, 0.7);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(0, 191, 143, 0.5);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(0, 191, 143, 0.7);
+    }
+}
+
+h4
+{
+    text-size-adjust: auto;
+    font-size: 17px;
+    text-align:center;
+}
+
+#stroked-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #00bf8f; 
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.meter {
+    box-sizing: content-box;
+    height: 25px; 
+    width: 350px;
+    margin: 25px ; 
+    background: #555;
+    border-radius: 25px;
+    padding: 6px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+    justify-content: center;
+}
+
+    .meter > span {
+        display: block;
+        height: 100%;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: rgb(43, 194, 83);
+        background-image: linear-gradient( center bottom, rgb(43, 194, 83) 37%, rgb(84, 240, 84) 69% );
+        box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+        position: relative;
+        overflow: hidden;
+    }
+
+        .meter > span:after,
+        .animate > span > span {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient( -45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent );
+            z-index: 1;
+            background-size: 50px 50px;
+            animation: move 2s linear infinite;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            overflow: hidden;
+        }
+
+.animate > span:after {
+    display: none;
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+.purple > span {
+    background-color: purple;
+}
+
+.blue > span {
+    background-color: blue;
+}
+
+.nostripes > span > span,
+.nostripes > span::after {
+    background-image: none;
+}
+
+.Skillscontainer 
+{
+    background: rgba(215,123, 2003, 0.2);
+}
+
+.level
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level > b > span
+{
+    text-shadow: 2px 3px 4px black;
+}
