@@ -1,7 +1,12 @@
+using Portfolio.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Server=(localdb)\\LocalDatabase;Database=Portfolio;Trusted_Connection=True;"));
 
 var app = builder.Build();
 

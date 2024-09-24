@@ -1,94 +1,56 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using System.Web;
+@model IEnumerable<UnityProjectsModel>
+@using Portfolio.Controllers;
+
 @{
+
+    <div class="row-container">
+        @foreach(var project in Model.ToList())
+        {
+            <div>
+                <div class="row">
+                    <div class="title">@project.GameName</div>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="@project.YoutubeLink" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-container">
+                        <p>@project.GameDescription</p>
+                    </div>
+                </div>
+            </div>
+        }
+   </div>
+
     <style>
-        .row-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px; /* Space between rows */
-            margin: 20px;
-            color: white;
-        }
+            .row-container {
+                display: flex;
+                flex-direction: column;
+                gap: 30px; /* Space between rows */
+                margin: 20px;
+                color: white;
+            }
 
-        .row {
-            display: flex;
-            align-items: flex-start;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 8px;
-        }
+            .row {
+                display: flex;
+                align-items: flex-start;
+                border: 1px solid #ccc;
+                padding: 20px;
+                border-radius: 8px;
+            }
 
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+            .title {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
 
-        .video-container {
-            flex: 1;
-            padding-right: 20px;
-        }
+            .video-container {
+                flex: 1;
+                padding-right: 20px;
+            }
 
-        .text-container {
-            flex: 1;
-        }
-    </style>
-
-        <div class="row-container">
-            <div class="row">
-                <div class="title">BloodBall</div>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vkRoZoLuuvo?si=J_y3GoCoC67Lky0J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="text-container">
-                <p>Mój najnowszy projekt nad którym od niedawna pracuję, ma to być "Zabawna, brutalniejsza wersja fify". Przed rozpoczęciem rozgrywki tworzymy
-                swój skład wybierając zawodników oraz broń którą będziemy mogli losowo otrzymać w trakcie rozgrywki. Zawodnicy poruszają się za pomocą systemu 
-                Active Ragdoll, podczas rozgrywki mogą pojawić się losowe zdarzenia (np. wbiegnięcie kibiców na murawę i rozpoczęcie się bójki), gra docelowo ma
-                być singleplayer oraz mutli coop do 4 graczy, do tej pory udało mi się stworzyć tryb coop, testowe AI dla pozostałych zawodników, system ataku 
-                oraz podstawowe mechaniki gry w piłkę nożna. Projekt ten najlepiej pokazuje obecny stan moich programistycznych umiejętności.</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="title">Rubber Pipe Noir</div>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WAUDe7hj0rY?si=k71CcsxZjkmFMrWe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="text-container">
-                <p>Projekt 3D utrzymany w stylistyce noir, ma być prostą skradanką w której to gramy jako seryjny zabójca unikając
-                patroli policji i włamując się do mieszkań, do stworzenia tej produkcji wykorzystuje m.in. Universal Render Pipeline oraz NavMesh</p>
-                </div>
-            </div>
-
-            <div class="row">
-            <div class="title">Devil's Heaven</div>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rouZ3_1IvxQ?si=dll1wj8exiuGYaSe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="text-container">
-                <p>Zainspirowany projektem poziomów Hollow Knight'a oraz gameplayem Dead Cells postanowiłem stworzyć coś w podobnych klimatach. 
-                Ma to być dynamiczna gra rpg z mrocznym klimatem i kilkunastoma poziomami.Jak narazie udało mi się stworzyć krótkie demo z pierwszym 
-                poziomem. Do stworzenia animacji wykorzystuję modele 3D, 
-                animując je w blenderze nakładając następnie odpowiedni pixelowy shader i renderując je jako sprite'y 2D</p>
-                </div>
-            </div>
-
-
-        <div class="row">
-            <div class="title">Hungry Idle</div>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/rouZ3_1IvxQ?si=dll1wj8exiuGYaSe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="text-container">
-                <p>
-                    Zainspirowany projektem poziomów Hollow Knight'a oraz gameplayem Dead Cells postanowiłem stworzyć coś w podobnych klimatach.
-                    Ma to być dynamiczna gra rpg z mrocznym klimatem i kilkunastoma poziomami.Jak narazie udało mi się stworzyć krótkie demo z pierwszym
-                    poziomem. Do stworzenia animacji wykorzystuję modele 3D,
-                    animując je w blenderze nakładając następnie odpowiedni pixelowy shader i renderując je jako sprite'y 2D
-                </p>
-            </div>
-        </div>
-
-    </div>
+            .text-container {
+                flex: 1;
+            }
+        </style>
 }

@@ -23,7 +23,7 @@
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="SkillsView">Umiejętności</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="UnityView">Unity</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Unity" asp-action="UnityView">Unity</a>
                         </li>
 
                         <li class="nav-item">
@@ -31,9 +31,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Programowanie</a>
+                            <div class="btn-group">
+                                <a class="nav-link text-white" data-bs-toggle="dropdown">Programowanie</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Unity C#</a>
+                                    <a href="#" class="dropdown-item">C#</a>
+                                    <a href="#" class="dropdown-item">HTML/CSS</a>
+                                </div>
+                            </div>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">O mnie</a>
                         </li>
