@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Portfolio.Models
 {
+    [Table("UnityProjects")]
     public class UnityProjectsModel
     {
         [Key]

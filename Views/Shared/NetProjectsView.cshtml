@@ -1,0 +1,56 @@
+﻿@using System.Web;
+@model IEnumerable<NetProjectsModel>
+@using Portfolio.Controllers;
+
+@{
+
+    <div class="row-container">
+        @foreach (var project in Model.ToList())
+        {
+            <div>
+                <div class="row">
+                    <div class="title">@project.ProjectName</div>
+                    <div class="image-container">
+                        <img src="@project.ImageURL" alt="ProjectImage"/>
+                    </div>
+                    <div class="text-container">
+                        <p>@project.ProjectDescription</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <style>
+        .row-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px; /* Space between rows */
+            margin: 20px;
+            color: white;
+        }
+
+        .row {
+            display: flex;
+            align-items: flex-start;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .video-container {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .text-container {
+            flex: 1;
+        }
+    </style>
+}
