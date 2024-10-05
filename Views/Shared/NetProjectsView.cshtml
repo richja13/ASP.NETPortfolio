@@ -10,10 +10,10 @@
             <div>
                 <div class="row">
                     <div class="title">@project.ProjectName</div>
-                    <div class="image-container">
-                        <img src="@project.ImageURL" alt="ProjectImage"/>
+                    <div class="image-container" style="float: left;">
+                        <img src="@project.ImageURL" style="width: 480px;" alt="ProjectImage"/>
                     </div>
-                    <div class="text-container">
+                    <div class="text-container" style="float: right;">
                         <p>@project.ProjectDescription</p>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
         .row-container {
             display: flex;
             flex-direction: column;
-            gap: 30px; /* Space between rows */
+            gap: 30px; 
             margin: 20px;
             color: white;
         }
@@ -44,9 +44,9 @@
             margin-bottom: 10px;
         }
 
-        .video-container {
+        .image-container {
             flex: 1;
-            padding-right: 20px;
+            padding-right: 10px;
         }
 
         .text-container {

@@ -17,4 +17,18 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\DotNet\Alarm1.jpg" />
+    <None Include="wwwroot\Images\DotNet\Alarm2.jpg" />
+    <None Include="wwwroot\Images\DotNet\ExpenseTracker.PNG" />
+    <None Include="wwwroot\Images\DotNet\GeneratorHasla.PNG" />
+    <None Include="wwwroot\Images\DotNet\MovieDatabase1.png" />
+    <None Include="wwwroot\Images\DotNet\StronaPortfolio1.PNG" />
+    <None Include="wwwroot\Images\DotNet\YoutubeChannelStats.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\Logos\" />
+  </ItemGroup>
+
 </Project>
