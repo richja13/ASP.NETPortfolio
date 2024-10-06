@@ -2,55 +2,68 @@
 @model IEnumerable<UnityProjectsModel>
 @using Portfolio.Controllers;
 
-@{
 
-    <div class="row-container">
-        @foreach(var project in Model.ToList())
+
+    <div id="ProjectID" style="visibility: hidden">@ViewBag.ProjectID</div>
+
+        <div class="row-container">
+            @foreach(var project in Model.ToList())
         {
-            <div>
-                <div class="row">
-                    <div class="title">@project.GameName</div>
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="@project.YoutubeLink" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="text-container">
-                        <p>@project.GameDescription</p>
+                
+                <div>
+                    <div id="@project.GameName" class="row">
+                        <div class="title">@project.GameName</div>
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="@project.YoutubeLink" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="text-container">
+                            <p>@project.GameDescription</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         }
-   </div>
+       </div>
 
-    <style>
-            .row-container {
-                display: flex;
-                flex-direction: column;
-                gap: 30px; 
-                margin: 20px;
-                color: white;
-            }
+        <style>
+                .row-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px; 
+                    margin: 20px;
+                    color: white;
+                }
 
-            .row {
-                display: flex;
-                align-items: flex-start;
-                border: 1px solid #ccc;
-                padding: 20px;
-                border-radius: 8px;
-            }
+                .row {
+                    display: flex;
+                    align-items: flex-start;
+                    border: 1px solid #ccc;
+                    padding: 20px;
+                    border-radius: 8px;
+                }
 
-            .title {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 10px;
-            }
+                .title {
+                    font-size: 24px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
 
-            .video-container {
-                flex: 1;
-                padding-right: 20px;
-            }
+                .video-container {
+                    flex: 1;
+                    padding-right: 20px;
+                }
 
-            .text-container {
-                flex: 1;
-            }
-        </style>
-}
+                .text-container {
+                    flex: 1;
+                }
+            </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var project = document.getElementById("ProjectID").innerHTML
+            window.location.hash = project
+            console.log(project);
+        }
+    </script>
+
+
+

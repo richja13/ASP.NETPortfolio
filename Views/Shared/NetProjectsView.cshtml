@@ -2,13 +2,13 @@
 @model IEnumerable<NetProjectsModel>
 @using Portfolio.Controllers;
 
-@{
+    <div id="ProjectID" style="visibility: hidden">@ViewBag.ProjectID</div>
 
     <div class="row-container">
         @foreach (var project in Model.ToList())
         {
-            <div>
-                <div class="row">
+            <div> 
+                <div id="@project.ProjectName" class="row">
                     <div class="title">@project.ProjectName</div>
                     <div class="image-container" style="float: left;">
                         <img src="@project.ImageURL" style="width: 480px;" alt="ProjectImage"/>
@@ -53,4 +53,11 @@
             flex: 1;
         }
     </style>
-}
+
+<script type="text/javascript">
+    window.onload = function () {
+        var project = document.getElementById("ProjectID").innerHTML
+        window.location.hash = project
+        console.log(project);
+    }
+</script>

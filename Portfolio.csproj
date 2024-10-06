@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Images\Logos\" />
+    <Folder Include="wwwroot\Images\Graphics\" />
   </ItemGroup>
 
 </Project>
