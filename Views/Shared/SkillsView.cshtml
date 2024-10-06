@@ -1,9 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model IEnumerable<SkillModel>
+
+
+<div class="SkillsRowContainer" style="display: flex; flex-wrap: wrap; gap: 20px;">
+@foreach(var skill in Model.ToList())
+{
+    <div class="Skillscontainer" style="flex: 1 1 45%; display: flex; max-width: 45%;">
+  
+    <div style="display: inline-block">
+        <img style="width: 90px;" src="@skill.ImageURL" alt="logo" />
+        <br>
+        <div style="width: 100px;">
+            <div class="level">
+                <b>
+                    <span class="text-white">@skill.SkillName</span>
+                </b>
+            </div>
+        </div>
+    </div>
+    <div>
+        @if(skill.SkillLevel > 51)
+        {
+            <div class="meter purple">
+                <span style="width: @skill.SkillLevel% "></span>
+                </div>
+            }
+            else
+            {
+                <div class="meter blue">
+                    <span style="width: @skill.SkillLevel% "></span>
+                </div>
+            }
+         @*    <div class="level">
+            <b><span class="text-white">intermediate</span></b>
+        </div> *@
+    </div>
+</div>
 }
-<div class="Skillscontainer" style="display: flex;">
+</div>
+@* <div class="Skillscontainer" style="display: flex;">
     <div style="float: left;">
         <img style="width: 90px; float: left; align-content: flex-start;" src="https://www.cdnlogo.com/logos/c/27/c.svg" alt="logo" /> 
         <br>
@@ -17,7 +51,7 @@
     </div>
     <div>
         <div class="meter purple" >
-            <span style="width: 50%"></span>
+            <span style="width: 75%"></span>
         </div>
         <div class="level">
             <b><span class="text-white">intermediate</span></b>
@@ -25,7 +59,7 @@
     </div>
 
     <div style="float: left;">
-        <img style="width: 90px; float: left; align-content: flex-start;" src="https://i.redd.it/tu3gt6ysfxq71.png" alt="logo" />
+        <img style="width: 90px; float: left; align-content: flex-start;" src="/Images//Unity//UnityLogo.png" alt="logo" />
         <br>
         <div style="float: left; width: 100px;">
             <div class="level">
@@ -36,8 +70,8 @@
         </div>
     </div>
     <div>
-        <div class="meter blue">
-            <span style="width: 50%"></span>
+        <div class="meter purple">
+            <span style="width: 85%"></span>
         </div>
         <div class="level">
             <b><span class="text-white">intermediate</span></b>
@@ -59,7 +93,7 @@
     </div>
     <div>
         <div class="meter purple">
-            <span style="width: 50%"></span>
+            <span style="width: 80%"></span>
         </div>
         <div class="level">
             <b><span class="text-white">intermediate</span></b>
@@ -213,7 +247,7 @@
             <b><span class="text-white">intermediate</span></b>
         </div>
     </div>
-</div>
+</div> *@
 @* <script>
     const progressBar = document.getElementById('myProgressBar');
 

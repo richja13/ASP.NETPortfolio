@@ -2,6 +2,7 @@
 
 namespace Portfolio.Models
 {
+
     public class Skill
     {
         [Key]

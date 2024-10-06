@@ -8,6 +8,10 @@ namespace Portfolio.Models
 
         public DbSet<UnityProjectsModel> UnityProjects { get; set; }
 
+        public DbSet<GraphicsModel> Graphics { get; set; }
+
+        public DbSet<SkillModel> Skills { get; set; }
+
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
@@ -30,6 +34,33 @@ namespace Portfolio.Models
 
                 entity.Property(p => p.ImageURL).HasColumnName("ImageURL");
 
+            });
+
+            modelBuilder.Entity<GraphicsModel>(entity =>
+            {
+                entity.ToTable("Graphics");
+                entity.HasKey(p => p.ID).HasName("ID");
+
+                entity.Property(p => p.ID).HasColumnName("ID").HasColumnType("int").ValueGeneratedNever();
+
+                entity.Property(p => p.ImageURL).HasColumnName("ImageURL");
+
+                entity.Property(p => p.GraphicType).HasColumnName("GraphicType");
+            });
+
+            modelBuilder.Entity<SkillModel>(entity =>
+            {
+
+                entity.ToTable("Skills");
+                entity.HasKey(p => p.ID).HasName("ID");
+
+                entity.Property(p => p.ID).HasColumnName("ID").HasColumnType("int").ValueGeneratedNever();
+
+                entity.Property(p => p.ImageURL).HasColumnName("ImageURL");
+
+                entity.Property(p => p.SkillName).HasColumnName("SkillName");
+
+                entity.Property(p => p.SkillLevel).HasColumnName("SkillLevel");
             });
 
         }
